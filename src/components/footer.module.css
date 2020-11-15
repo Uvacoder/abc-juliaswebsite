@@ -1,0 +1,9 @@
+.footer {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 2rem;
+  text-align: right;
+}
+.footer p {
+  font-size: 0.5rem;
+}

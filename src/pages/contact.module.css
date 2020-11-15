@@ -1,0 +1,57 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background: #f8b840;
+  margin: 1rem 0;
+  padding: 1rem 1rem;
+  font-family: "Courier New", Courier, monospace;
+  width: 60%;
+}
+.description {
+  width: 60%;
+}
+
+.form input {
+  padding: 0.5rem;
+}
+
+.form label {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.messageBox {
+  height: 15rem;
+  padding: 1rem;
+}
+
+.submit {
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 540px) {
+  .form {
+    width: 100%;
+  }
+  .description {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    width: auto;
+  }
+  .description {
+    width: auto;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .form {
+    width: 90%;
+  }
+  .description {
+    width: 90%;
+  }
+}

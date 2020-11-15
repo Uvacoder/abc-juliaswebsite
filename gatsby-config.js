@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/galleries`,
-        name: `images`,
+        path: `${__dirname}/src`,
+        name: `src`,
       },
     },
     `gatsby-plugin-sharp`,

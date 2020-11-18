@@ -22,6 +22,7 @@ nav a:hover {
 .hamburger {
   margin: 0;
   font-size: 30px;
+  color: #120078;
   display: none;
   width: 30px;
   float: left;

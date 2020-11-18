@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { window } from "browser-monads"
 import { Link } from "gatsby"
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa"
 

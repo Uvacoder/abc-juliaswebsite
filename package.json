@@ -14,7 +14,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
     "browser-monads": "^1.0.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.25.3",
@@ -28,7 +27,6 @@
     "gatsby-transformer-remark": "^2.9.2",
     "gatsby-transformer-sharp": "^2.5.21",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.4.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",

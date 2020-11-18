@@ -11,7 +11,7 @@ const AboutPage = () => {
       <Head title="About" />
       <div className={aboutPageStyles.container}>
         <h1>About Me</h1>
-        <img src="https://placedog.net/700/260" alt="no photo" />
+        <img src="https://placedog.net/800/260" alt="no photo" />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis

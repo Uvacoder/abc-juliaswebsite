@@ -9,14 +9,13 @@
 
 nav a {
   display: block;
-  color: #333;
+  color: #120078;
   padding: 16px;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: #fff;
-  background: #f8b840;
+  background: #fd3a69;
   text-decoration: none;
 }
 
@@ -26,6 +25,7 @@ nav a:hover {
   display: none;
   width: 30px;
   float: left;
+  padding: 2rem 1rem;
 }
 .toggle {
   display: none;
@@ -34,36 +34,6 @@ nav a:hover {
 .icons {
   display: inline-flex;
 }
-/* 
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-/* @media screen and (max-width: 700px) {
-  .sidebarMain {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebarMain a {
-    float: left;
-  }
-} */
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-/* @media screen and (max-width: 400px) {
-  .sidebarMain a {
-    text-align: center;
-    float: none;
-  }
-  .sidebarMain {
-    margin: 0;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .icons {
-    display: none;
-  }
-} */
-
 @media screen and (max-width: 700px) {
   .hamburger {
     display: block;
@@ -76,16 +46,15 @@ nav a:hover {
   }
   .sidebarMain a {
     display: block;
-    color: #fd3a69;
+    color: #120078;
   }
-  .sidebarMain a:hover {
+  a:hover {
     background: #fecd1a;
-    color: #fd3a69;
+    color: #f4f4f4;
   }
   .sidebarMain {
     display: block;
-    background: #120078;
-
-    width: 100%;
+    background: #ff6f6f;
+    width: 50%;
   }
 }

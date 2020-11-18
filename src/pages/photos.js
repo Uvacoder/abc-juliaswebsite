@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Imgage from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
@@ -42,7 +42,6 @@ const PhotosPage = () => {
       }
     }
   `)
-  console.log(data.allStrapiPhotos)
   return (
     <Layout>
       <Head title="Photos" />
@@ -59,14 +58,13 @@ const PhotosPage = () => {
         >
           {data.allStrapiPhotos.edges.map((edge, i) => {
             return (
-              <Link to={edge.node.photo.url}>
+              <a href={edge.node.photo.url} key={i}>
                 <Imgage
                   fluid={edge.node.photo.childImageSharp.fluid}
                   className="image"
                   alt={edge.node.title}
-                  key={edge.node.id}
                 />
-              </Link>
+              </a>
             )
           })}
         </Masonry>

@@ -1,5 +1,7 @@
 .footer {
   text-align: right;
-  max-height: 1.2rem;
-  font-size: 0.5rem;
+  margin-right: 5rem;
+  max-height: 1rem;
+  font-size: 0.6rem;
+  margin-bottom: 5px;
 }

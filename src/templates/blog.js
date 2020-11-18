@@ -1,7 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
+import blogStyle from "../pages/blog.module.css"
 
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 export const query = graphql`
   query($slug: String!) {
@@ -21,9 +22,13 @@ export const query = graphql`
 const BlogTemplate = ({ data }) => {
   return (
     <Layout>
+      <Link to="/blog" className={blogStyle.backBtn}>
+        back
+      </Link>
       <h1>{data.strapiArticles.title}</h1>
       <p>{data.strapiArticles.published_at}</p>
       <div
+        className={blogStyle.articleText}
         dangerouslySetInnerHTML={{
           __html:
             data.strapiArticles.childStrapiArticleContent.childMarkdownRemark

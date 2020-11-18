@@ -14,7 +14,6 @@ const Navbar = () => {
   //if you click a link in the mobile nav it toggles out of the nav menu
 
   const toggleNavDisplay = () => {
-    console.log("hello")
     return isChecked ? setIsChecked(false) : setIsChecked(true)
   }
   useEffect(() => {
@@ -28,8 +27,6 @@ const Navbar = () => {
 
     return () => window.removeEventListener("resize", handleResize)
   }, [width])
-
-  console.log("check if mobile", isMobile)
 
   const displayMobileNav = isChecked
     ? {

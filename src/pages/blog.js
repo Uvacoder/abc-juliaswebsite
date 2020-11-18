@@ -26,9 +26,9 @@ const BlogPage = () => {
   return (
     <Layout>
       <h1>Blog</h1>
-      {data.allStrapiArticleContent.edges.map(edge => {
+      {data.allStrapiArticleContent.edges.map((edge, i) => {
         return (
-          <div className={blogStyles.box}>
+          <div className={blogStyles.box} key={i}>
             <Link to={`/blog/${edge.node.slug}`}>
               <h2>{edge.node.title}</h2>
               <div className={blogStyles.descriptions}>

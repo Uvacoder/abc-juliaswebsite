@@ -3,8 +3,8 @@ import footerStyles from "./footer.module.css"
 
 const Footer = () => {
   return (
-    <footer className={footerStyles.footer}>
-      <p>Developed By Dillon Kelley</p>
+    <footer className="footer navbar-static-bottom">
+      <p className={footerStyles.footer}>Developed By Dillon Kelley</p>
     </footer>
   )
 }

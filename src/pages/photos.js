@@ -9,6 +9,18 @@ import Layout from "../components/layout"
 
 import "../styles/masonry.css"
 
+const options = {
+  settings: {
+    overlayColor: "rgba(0, 0, 0, 0.8)",
+  },
+  buttons: {
+    showDownloadButton: false,
+    showThumbnailsButton: false,
+    showAutoplayButton: false,
+    size: "10px",
+  },
+}
+
 const PhotosPage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -35,7 +47,7 @@ const PhotosPage = () => {
       <Head title="Photos" />
       <h1>Photography</h1>
 
-      <SRLWrapper>
+      <SRLWrapper options={options}>
         <Masonry
           breakpointCols={3}
           className="my-masonry-grid"

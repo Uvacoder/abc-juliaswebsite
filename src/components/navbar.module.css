@@ -17,6 +17,7 @@ nav a {
 nav a:hover {
   color: #fff;
   background: #f8b840;
+  text-decoration: none;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */

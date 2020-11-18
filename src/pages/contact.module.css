@@ -1,7 +1,8 @@
 .form {
   display: flex;
   flex-direction: column;
-  background: #f8b840;
+  color: #fecd1a;
+  background: #120078;
   margin: 1rem 0;
   padding: 1rem 1rem;
   font-family: "Courier New", Courier, monospace;

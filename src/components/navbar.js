@@ -1,33 +1,79 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { FaInstagram, FaEnvelope, FaLinkedinIn } from "react-icons/fa"
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa"
 
 import navbarStyle from "./navbar.module.css"
 
 const Navbar = () => {
+  const [width, setWidth] = useState(window.innerWidth)
+  const [isChecked, setIsChecked] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Logic to add :
+  //if you click a link in the mobile nav it toggles out of the nav menu
+
+  const toggleNavDisplay = () => {
+    console.log("hello")
+    return isChecked ? setIsChecked(false) : setIsChecked(true)
+  }
+  useEffect(() => {
+    if (width < 700) {
+      setIsMobile(true)
+    } else {
+      setIsMobile(false)
+    }
+    const handleResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [width])
+
+  console.log("check if mobile", isMobile)
+
+  const displayMobileNav = isChecked
+    ? {
+        display: "block",
+      }
+    : {
+        display: "none",
+      }
+
   return (
-    <nav className={navbarStyle.sidebarMain}>
-      <h1>
-        <Link to="/">JW</Link>
-      </h1>
-      <Link to="/photos">Photos</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
+    <>
+      <label
+        htmlFor="toggle"
+        onClick={toggleNavDisplay}
+        className={navbarStyle.hamburger}
+      >
+        &#9776;
+      </label>
+      <input type="checkbox" className={navbarStyle.toggle} />
+      <nav
+        className={navbarStyle.sidebarMain}
+        style={isMobile ? displayMobileNav : null}
+      >
+        <h1>
+          <Link to="/">JW</Link>
+        </h1>
+        <Link to="/photos">Photos</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
 
-      <div className={navbarStyle.icons} id="social-medias">
-        <a href="https://www.instagram.com/freckledjuju/" target="blank">
-          <FaInstagram />
-        </a>
+        <div className={navbarStyle.icons} id="social-medias">
+          <a href="https://www.instagram.com/freckledjuju/" target="blank">
+            <FaInstagram />
+          </a>
 
-        <a
-          href="https://www.linkedin.com/in/julia-williams-0a969aa4"
-          target="blank"
-        >
-          <FaLinkedinIn />
-        </a>
-      </div>
-    </nav>
+          <a
+            href="https://www.linkedin.com/in/julia-williams-0a969aa4"
+            target="blank"
+          >
+            <FaLinkedinIn />
+          </a>
+        </div>
+      </nav>
+    </>
   )
 }
 

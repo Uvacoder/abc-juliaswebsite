@@ -28,6 +28,7 @@ const PhotosPage = () => {
         edges {
           node {
             title
+            id
             photo {
               childImageSharp {
                 fluid(maxWidth: 1200, quality: 100) {
@@ -48,6 +49,9 @@ const PhotosPage = () => {
       <h1>Photography</h1>
 
       <SRLWrapper options={options}>
+        {/* 
+      import isMobile and render breakpointCols based on width
+  */}
         <Masonry
           breakpointCols={3}
           className="my-masonry-grid"
@@ -60,6 +64,7 @@ const PhotosPage = () => {
                   fluid={edge.node.photo.childImageSharp.fluid}
                   className="image"
                   alt={edge.node.title}
+                  key={edge.node.id}
                 />
               </Link>
             )

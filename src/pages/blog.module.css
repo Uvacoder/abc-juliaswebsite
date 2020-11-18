@@ -11,8 +11,9 @@
 }
 
 .box:hover {
-  background: #ffd382;
+  background: rgb(18, 0, 120, 0.3);
 }
+
 .date {
   color: #222;
   padding-right: 0.5rem;

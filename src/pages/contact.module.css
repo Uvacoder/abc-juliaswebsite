@@ -2,8 +2,8 @@
   display: flex;
   max-width: 800px;
   flex-direction: column;
-  color: #fecd1a;
-  background: #3522a1;
+  color: #333;
+  background: none;
   margin: 1rem 0;
   padding: 1rem 1rem;
   font-family: Georgia, "Times New Roman", Times, serif;

@@ -26,6 +26,6 @@
 }
 
 .image:hover {
-  -webkit-filter: blur(1px); /* Chrome, Safari, Opera */
-  filter: blur(1px);
+  -webkit-filter: contrast(50%); /* Chrome, Safari, Opera */
+  filter: contrast(50%);
 }

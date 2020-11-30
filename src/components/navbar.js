@@ -54,7 +54,7 @@ const Navbar = () => {
           <Link to="/">JW</Link>
         </h1>
         <Link to="/photos">Photos</Link>
-        <Link to="/blog">Blog</Link>
+        {/*<Link to="/blog">Blog</Link> */}
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
 

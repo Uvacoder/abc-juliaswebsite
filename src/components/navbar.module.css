@@ -9,20 +9,20 @@
 
 nav a {
   display: block;
-  color: #120078;
+  color: #333;
   padding: 16px;
   text-decoration: none;
 }
 
 nav a:hover {
-  background: #fd3a69;
+  background: rgba(0, 0, 255, 0.5);
   text-decoration: none;
 }
 
 .hamburger {
   margin: 0;
   font-size: 30px;
-  color: #120078;
+  color: #333;
   display: none;
   width: 30px;
   float: left;
@@ -47,10 +47,9 @@ nav a:hover {
   }
   .sidebarMain a {
     display: block;
-    color: #120078;
+    color: #333;
   }
   a:hover {
-    background: #fecd1a;
     color: #f4f4f4;
   }
   .sidebarMain {

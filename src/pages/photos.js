@@ -64,9 +64,6 @@ const PhotosPage = () => {
       <Head title="Photos" />
       <h1>Photography</h1>
       <SRLWrapper options={options}>
-        {/* 
-      import isMobile and render breakpointCols based on width
-  */}
         <Masonry
           breakpointCols={isMobile ? 2 : 3}
           className="my-masonry-grid"

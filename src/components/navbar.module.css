@@ -7,6 +7,10 @@
   overflow: auto;
 }
 
+.sidebarMain h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
 nav a {
   display: block;
   color: #333;
@@ -15,8 +19,9 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(0, 0, 255, 0.5);
+  background: rgb(0, 99, 156);
   text-decoration: none;
+  color: #f4f4f4;
 }
 
 .hamburger {
@@ -54,7 +59,7 @@ nav a:hover {
   }
   .sidebarMain {
     display: block;
-    background: #ff6f6f;
+    background: #c4deff;
     width: 50%;
   }
 }

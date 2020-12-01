@@ -28,7 +28,7 @@ const ContactPage = () => {
   return (
     <Layout>
       <Head title="Contact" />
-      <h1>Contact me!</h1>
+      <h1>Contact</h1>
       <p className={formStyle.description}>
         Feel free to inquire about anything. You can also drop a line on
         instagram or linkedIn if that's your flavor

@@ -10,6 +10,11 @@
 }
 .description {
   max-width: 800px;
+  padding: 1rem;
+}
+.description p {
+  font-size: 1rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .form input {

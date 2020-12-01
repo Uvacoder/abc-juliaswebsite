@@ -12,13 +12,17 @@ import "../styles/masonry.css"
 
 const options = {
   settings: {
-    overlayColor: "rgba(0, 0, 0, 0.8)",
+    overlayColor: "rgba(0, 0, 0, 0.9)",
+    height: "90vh",
   },
   buttons: {
     showDownloadButton: false,
     showThumbnailsButton: false,
     showAutoplayButton: false,
     size: "10px",
+  },
+  thumbnails: {
+    showThumbnails: false,
   },
 }
 

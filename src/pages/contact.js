@@ -31,7 +31,7 @@ const ContactPage = () => {
       <h1>Contact</h1>
       <p className={formStyle.description}>
         Feel free to inquire about anything. You can also drop a line on
-        instagram or linkedIn if that's your flavor
+        instagram or linkedIn if that's your flavor.
       </p>
       <form
         onSubmit={submitForm}

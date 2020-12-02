@@ -49,6 +49,9 @@ nav a:hover {
     text-align: center;
     width: 100%;
     display: none;
+    display: block;
+    background: #c4deff;
+    width: 50%;
   }
   .sidebarMain a {
     display: block;
@@ -56,10 +59,5 @@ nav a:hover {
   }
   a:hover {
     color: #f4f4f4;
-  }
-  .sidebarMain {
-    display: block;
-    background: #c4deff;
-    width: 50%;
   }
 }

@@ -23,6 +23,6 @@ main {
 @media screen and (max-width: 700px) {
   .content {
     margin: 0;
-    margin-left: 1rem;
+    margin-left: 0.3rem;
   }
 }

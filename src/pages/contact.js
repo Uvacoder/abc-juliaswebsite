@@ -39,9 +39,9 @@ const ContactPage = () => {
         method="POST"
         className={formStyle.form}
       >
-        <label>Email:</label>
+        <label htmlFor="email">Email:</label>
         <input type="email" name="email" placeholder="youremail@website.com" />
-        <label>Message:</label>
+        <label htmlFor="message">Message:</label>
         <textarea
           type="text"
           name="message"

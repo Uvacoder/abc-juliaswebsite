@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Imgage from "gatsby-image"
+import Image from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
 import { window } from "browser-monads"
 
+import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
 import Layout from "../components/layout"
 
@@ -62,7 +63,8 @@ const PhotosPage = () => {
       }
     }
   `)
-
+  const photos = data.allStrapiPhotos.edges
+  const shuffled = shuffleArray(photos)
   return (
     <Layout>
       <Head title="Photos" />
@@ -73,10 +75,10 @@ const PhotosPage = () => {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {data.allStrapiPhotos.edges.map((edge, i) => {
+          {shuffled.map((edge, i) => {
             return (
               <a href={edge.node.photo.url} key={i}>
-                <Imgage
+                <Image
                   fluid={edge.node.photo.childImageSharp.fluid}
                   className="image"
                   alt={edge.node.title}

@@ -1,7 +1,6 @@
 const path = require("path")
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
-
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const blogTemplate = path.resolve("./src/templates/blog.js")
@@ -26,15 +25,31 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+// Create blog post list pages
+//   const postsPerPage = 2;
+//   const numPages = Math.ceil(posts.length / postsPerPage);
 
-// exports.createPages = async ({ actions, graphql }) => {
-//   const {createPage} = actions
-//   const res = await graphql`
-
-//   `
+//   Array.from({ length: numPages }).forEach((_, i) => {
+//     createPage({
+//       path: i === 0 ? `/` : `/${i + 1}`,
+//       component: path.resolve('./src/templates/blog-list.js'),
+//       context: {
+//         limit: postsPerPage,`
+//         skip: i * postsPerPage,
+//         numPages,
+//         currentPage: i + 1
+//       },
+//     });
+//   });
+// })
 // }
-
-module.exports.onCreateNode = async ({ node, actions, createNodeId, store, cache }) => {
+module.exports.onCreateNode = async ({
+  node,
+  actions,
+  createNodeId,
+  store,
+  cache,
+}) => {
   const crypto = require(`crypto`)
 
   if (node.internal.type === "StrapiArticles") {
@@ -60,21 +75,19 @@ module.exports.onCreateNode = async ({ node, actions, createNodeId, store, cache
       parent: node,
       child: newNode,
     })
-  } 
+  }
 
   if (node.internal.type === "StrapiPhotos") {
-      let fileNode = await createRemoteFileNode({
-        url: node.photo.url, // string that points to the URL of the image
-        parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
-        createNode: actions.createNode, // helper function in gatsby-node to generate the node
-        createNodeId, // helper function in gatsby-node to generate the node id
-        cache, // Gatsby's cache
-        store, // Gatsby's Redux store
-      })
-      if(fileNode){
-        node.photo___NODE = fileNode.id
-
-      }
+    let fileNode = await createRemoteFileNode({
+      url: node.photo.url, // string that points to the URL of the image
+      parentNodeId: node.id, // id of the parent node of the fileNode you are going to create
+      createNode: actions.createNode, // helper function in gatsby-node to generate the node
+      createNodeId, // helper function in gatsby-node to generate the node id
+      cache, // Gatsby's cache
+      store, // Gatsby's Redux store
+    })
+    if (fileNode) {
+      node.photo___NODE = fileNode.id
     }
-  
+  }
 }

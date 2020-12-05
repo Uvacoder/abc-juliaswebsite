@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import indexStyles from "./index.module.css"
 
 const WelcomePage = () => {
+  const randomPic = Math.floor(Math.random() * 7)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -15,12 +16,10 @@ const WelcomePage = () => {
           title
         }
       }
-      strapiPhotos(title: { eq: "home photo" }) {
-        photo {
-          childImageSharp {
-            fluid(maxWidth: 1200, quality: 100, maxHeight: 800) {
-              ...GatsbyImageSharpFluid
-            }
+      file(name: { eq: "0" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200, quality: 100, maxHeight: 800) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -31,10 +30,9 @@ const WelcomePage = () => {
     <Layout>
       <Head />
       <h1>{data.site.siteMetadata.title}</h1>
-      <p>This is a snippet of who I am!</p>
       <Image
         className={indexStyles.photo}
-        fluid={data.strapiPhotos.photo.childImageSharp.fluid}
+        fluid={data.file.childImageSharp.fluid}
       />
     </Layout>
   )

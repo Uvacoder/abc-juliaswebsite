@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
-import { window } from "browser-monads"
 
 import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
@@ -26,23 +25,14 @@ const options = {
     showThumbnails: false,
   },
 }
+const breakpointColumnsObj = {
+  default: 3,
+  1100: 3,
+  700: 2,
+  500: 2,
+}
 
 const PhotosPage = () => {
-  const [isMobile, setIsMobile] = useState(false)
-  const [width, setWidth] = useState(window.innerWidth)
-
-  useEffect(() => {
-    if (width < 700) {
-      setIsMobile(true)
-    } else {
-      setIsMobile(false)
-    }
-    const handleResize = () => setWidth(window.innerWidth)
-    window.addEventListener("resize", handleResize)
-
-    return () => window.removeEventListener("resize", handleResize)
-  }, [width])
-
   const data = useStaticQuery(graphql`
     query {
       allStrapiPhotos {
@@ -71,7 +61,7 @@ const PhotosPage = () => {
       <h1>Photography</h1>
       <SRLWrapper options={options}>
         <Masonry
-          breakpointCols={isMobile ? 2 : 3}
+          breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >

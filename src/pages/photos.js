@@ -51,7 +51,6 @@ const PhotosPage = () => {
                   ...GatsbyImageSharpFluid
                 }
               }
-              url
             }
           }
         }

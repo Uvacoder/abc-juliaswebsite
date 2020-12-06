@@ -5,7 +5,7 @@ import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
 import InfiniteScroll from "react-infinite-scroll-component"
 
-import { shuffleArray } from "../utils/randomizer"
+// import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
 import Layout from "../components/layout"
 
@@ -61,8 +61,6 @@ const PhotosPage = () => {
 
   const photos = data.allStrapiPhotos.edges
   // const shuffled = shuffleArray(photos)
-
-  console.log(items)
 
   return (
     <Layout>

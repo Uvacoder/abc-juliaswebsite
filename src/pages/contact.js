@@ -29,7 +29,6 @@ const ContactPage = () => {
     <Layout>
       <Head title="Contact" />
       <h1>Contact</h1>
-
       <form
         onSubmit={submitForm}
         action="https://formspree.io/f/xaylbnyo"

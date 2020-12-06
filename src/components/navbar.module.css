@@ -16,6 +16,7 @@ nav a {
   color: #333;
   padding: 16px;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
 nav a:hover {

@@ -26,7 +26,7 @@ const WelcomePage = () => {
           node {
             id
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 1200, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

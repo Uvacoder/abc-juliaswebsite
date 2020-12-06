@@ -20,15 +20,19 @@ const options = {
     showThumbnailsButton: false,
     showAutoplayButton: false,
     size: "10px",
+    showCloseButton: true,
   },
   thumbnails: {
     showThumbnails: false,
+  },
+  caption: {
+    showCaption: false,
   },
 }
 const breakpointColumnsObj = {
   default: 3,
   1100: 3,
-  700: 2,
+  948: 2,
   500: 2,
 }
 

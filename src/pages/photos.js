@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
@@ -58,8 +58,12 @@ const PhotosPage = () => {
       }
     }
   `)
+
   const photos = data.allStrapiPhotos.edges
-  const shuffled = shuffleArray(photos)
+  // const shuffled = shuffleArray(photos)
+
+  console.log(items)
+
   return (
     <Layout>
       <Head title="Photos" />
@@ -71,7 +75,7 @@ const PhotosPage = () => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {shuffled.map((edge, i) => {
+            {photos.map((edge, i) => {
               return (
                 <a href={edge.node.photo.url} key={i}>
                   <Image

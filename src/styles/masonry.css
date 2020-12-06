@@ -12,7 +12,7 @@
 }
 
 .my-masonry-grid_column {
-  padding-left: 0.2rem;
+  padding-left: 0.4rem;
   /* margin-bottom: 2rem; */
   /* gutter size */
   background-clip: padding-box;
@@ -22,7 +22,7 @@
 .my-masonry-grid_column .image {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.4rem;
 }
 
 .image:hover {

@@ -42,6 +42,9 @@ const Navbar = () => {
         htmlFor="toggle"
         onClick={toggleNavDisplay}
         className={navbarStyle.hamburger}
+        onKeyPress={toggleNavDisplay}
+        role="button"
+        tabIndex="0"
       >
         &#9776;
       </label>

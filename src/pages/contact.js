@@ -29,10 +29,7 @@ const ContactPage = () => {
     <Layout>
       <Head title="Contact" />
       <h1>Contact</h1>
-      <p className={formStyle.description}>
-        Feel free to inquire about anything. You can also drop a line on
-        instagram or linkedIn if that's your flavor.
-      </p>
+
       <form
         onSubmit={submitForm}
         action="https://formspree.io/f/xaylbnyo"
@@ -46,7 +43,7 @@ const ContactPage = () => {
           type="text"
           name="message"
           className={formStyle.messageBox}
-          placeholder="wow! love your work and I want to hire you"
+          placeholder="Inquire here..."
         />
         {status === "SUCCESS" ? (
           <p>Thanks!</p>

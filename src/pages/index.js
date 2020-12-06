@@ -8,7 +8,6 @@ import Layout from "../components/layout"
 import indexStyles from "./index.module.css"
 
 const WelcomePage = () => {
-  const randomPic = Math.floor(Math.random() * 7)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -16,24 +15,44 @@ const WelcomePage = () => {
           title
         }
       }
-      file(name: { eq: "0" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200, quality: 100, maxHeight: 800) {
-            ...GatsbyImageSharpFluid
+
+      allFile(
+        filter: {
+          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          relativeDirectory: { eq: "splash" }
+        }
+      ) {
+        edges {
+          node {
+            id
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }
     }
   `)
+  const photos = data.allFile.edges
+  const randomIndex = Math.floor(Math.random() * photos.length)
 
   return (
     <Layout>
       <Head />
       <h1>{data.site.siteMetadata.title}</h1>
-      <Image
-        className={indexStyles.photo}
-        fluid={data.file.childImageSharp.fluid}
-      />
+
+      {photos
+        .filter((photo, i) => i === randomIndex)
+        .map(photo => {
+          return (
+            <Image
+              className={indexStyles.photo}
+              fluid={photo.node.childImageSharp.fluid}
+            />
+          )
+        })}
     </Layout>
   )
 }

@@ -30,7 +30,7 @@ const AboutPage = () => {
             fluid={data.file.childImageSharp.fluid}
             className={aboutPageStyles.photo}
           />
-          <p>Photo credit: Jordan Nelson</p>
+          <p className={aboutPageStyles.credit}>Photo credit: Jordan Nelson</p>
         </div>
         <p>
           Julia is a self-taught film photographer from Detroit, currently

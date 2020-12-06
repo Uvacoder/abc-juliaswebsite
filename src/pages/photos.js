@@ -1,9 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
-import InfiniteScroll from "react-infinite-scroll-component"
+// import InfiniteScroll from "react-infinite-scroll-component"
 
 // import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
@@ -67,25 +67,24 @@ const PhotosPage = () => {
       <Head title="Photos" />
       <h1>Photography</h1>
       <SRLWrapper options={options}>
-        <InfiniteScroll dataLength={photos.length} loader={<h4>Loading...</h4>}>
-          <Masonry
-            breakpointCols={breakpointColumnsObj}
-            className="my-masonry-grid"
-            columnClassName="my-masonry-grid_column"
-          >
-            {photos.map((edge, i) => {
-              return (
-                <a href={edge.node.photo.url} key={i}>
-                  <Image
-                    fluid={edge.node.photo.childImageSharp.fluid}
-                    className="image"
-                    alt={edge.node.title}
-                  />
-                </a>
-              )
-            })}
-          </Masonry>
-        </InfiniteScroll>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {photos.map((edge, i) => {
+            return (
+              <div className="individualPhoto" key={i}>
+                <Image
+                  fluid={edge.node.photo.childImageSharp.fluid}
+                  className="image"
+                  alt={edge.node.title}
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
+            )
+          })}
+        </Masonry>
       </SRLWrapper>
     </Layout>
   )

@@ -13,15 +13,14 @@
 
 .my-masonry-grid_column {
   padding-left: 0.4rem;
-  /* margin-bottom: 2rem; */
+  margin-bottom: 2rem;
   /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.my-masonry-grid_column .image {
+.my-masonry-grid_column .individualPhoto {
   /* change div to reference your elements you put in <Masonry> */
-  background: grey;
   margin-bottom: 0.4rem;
 }
 
@@ -35,23 +34,3 @@
     margin: 0;
   }
 }
-
-/* 
-
-.image-grid {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(50px, auto);
-}
-
-.image-grid .image-item:nth-child(5n) {
-  grid-column-end: span 2;
-}
-
-.image-grid img {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */

@@ -30,10 +30,10 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
+    "react-image-lightbox": "^5.1.1",
     "react-infinite-scroll-component": "^5.1.0",
     "react-lightbox-component": "^1.2.1",
-    "react-masonry-css": "^1.0.14",
-    "simple-react-lightbox": "^3.3.4-2"
+    "react-masonry-css": "^1.0.14"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

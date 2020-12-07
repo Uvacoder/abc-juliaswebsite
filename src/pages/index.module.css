@@ -1,6 +1,9 @@
+.container {
+  height: 100%;
+  max-width: 40rem;
+}
 .photo {
-  height: 70vh;
-  max-width: 36rem;
+  width: 100%;
 }
 p {
   font-size: 0.9rem;

@@ -47,10 +47,12 @@ const WelcomePage = () => {
         .filter((photo, i) => i === randomIndex)
         .map(photo => {
           return (
-            <Image
-              className={indexStyles.photo}
-              fluid={photo.node.childImageSharp.fluid}
-            />
+            <div className={indexStyles.container}>
+              <Image
+                className={indexStyles.photo}
+                fluid={photo.node.childImageSharp.fluid}
+              />
+            </div>
           )
         })}
     </Layout>

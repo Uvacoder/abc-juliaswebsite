@@ -31,7 +31,6 @@ const PhotosPage = () => {
   `)
 
   const photos = data.allCloudinaryMedia.edges
-  console.log(photos)
   // const shuffled = shuffleArray(photos)
 
   return (

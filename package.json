@@ -21,19 +21,18 @@
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-sharp": "^2.7.1",
     "gatsby-remark-images": "^3.4.1",
-    "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-cloudinary": "^0.1.14",
     "gatsby-source-filesystem": "^2.4.2",
     "gatsby-source-strapi": "0.0.12",
+    "gatsby-transformer-cloudinary": "^1.1.3",
     "gatsby-transformer-remark": "^2.9.2",
     "gatsby-transformer-sharp": "^2.5.21",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
-    "react-image-lightbox": "^5.1.1",
-    "react-infinite-scroll-component": "^5.1.0",
-    "react-lightbox-component": "^1.2.1",
-    "react-masonry-css": "^1.0.14"
+    "react-masonry-css": "^1.0.14",
+    "simple-react-lightbox": "^3.3.4-2"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

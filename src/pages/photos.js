@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
-
+import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
 
 import { shuffleArray } from "../utils/randomizer"
@@ -19,50 +19,65 @@ const breakpointColumnsObj = {
 
 const PhotosPage = () => {
   const data = useStaticQuery(graphql`
-    query {
-      allStrapiPhotos {
+    query CloudinaryImage {
+      allCloudinaryMedia {
         edges {
           node {
-            title
-            id
-            photo {
-              childImageSharp {
-                fluid(maxWidth: 1200, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            secure_url
           }
         }
       }
     }
   `)
 
-  const photos = data.allStrapiPhotos.edges
-  const shuffled = shuffleArray(photos)
+  const photos = data.allCloudinaryMedia.edges
+  console.log(photos)
+  // const shuffled = shuffleArray(photos)
 
   return (
     <Layout>
       <Head title="Photos" />
       <h1>Photography</h1>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+      <SRLWrapper
+        options={{
+          settings: {
+            overlayColor: "rgba(0, 0, 0, 0.9)",
+            height: "91vh",
+          },
+          buttons: {
+            showDownloadButton: false,
+            showThumbnailsButton: false,
+            showAutoplayButton: false,
+            size: "10px",
+            showCloseButton: true,
+          },
+          thumbnails: {
+            showThumbnails: false,
+          },
+          caption: {
+            showCaption: false,
+          },
+        }}
       >
-        {shuffled.map((edge, i) => {
-          return (
-            <div className="individualPhoto" key={i}>
-              <Image
-                fluid={edge.node.photo.childImageSharp.fluid}
-                className="image"
-                alt={edge.node.title}
-                style={{ cursor: "pointer" }}
-              />
-            </div>
-          )
-        })}
-      </Masonry>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
+          {photos.map((edge, i) => {
+            return (
+              <div className="individualPhoto" key={i}>
+                <img
+                  src={edge.node.secure_url}
+                  className="image"
+                  alt={edge.node.title}
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
+            )
+          })}
+        </Masonry>
+      </SRLWrapper>
     </Layout>
   )
 }

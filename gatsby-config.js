@@ -1,6 +1,12 @@
-require("dotenv").config({
-  path: `.env`,
-})
+const dotenv = require("dotenv")
+
+const result = dotenv.config()
+
+if (result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)
 
 module.exports = {
   siteMetadata: {
@@ -19,16 +25,16 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: `gatsby-source-cloudinary`,
       options: {
-        apiURL:
-          `https://jw-portfolio-cms.herokuapp.com` || `http://localhost:1337`,
-        queryLimit: 1000, // Default to 100
-        contentTypes: [`photos`, `articles`],
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        maxResults: 200,
+        // type: `private`,
+        // prefix: `medium`,
       },
-    },
-    {
-      resolve: "gatsby-transformer-remark",
     },
   ],
 }

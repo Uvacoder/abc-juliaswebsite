@@ -3,6 +3,7 @@ import React from "react"
 
 import Navbar from "./navbar"
 import Footer from "./footer"
+import SimpleReactLightbox from "simple-react-lightbox"
 
 import "../styles/styles.css"
 import layoutStyle from "./layout.module.css"
@@ -13,7 +14,9 @@ const Layout = props => {
     <div className={layoutStyle.body}>
       <Navbar />
       <div className={layoutStyle.content}>
-        <main>{props.children}</main>
+        <SimpleReactLightbox>
+          <main>{props.children}</main>
+        </SimpleReactLightbox>
       </div>
       <Footer />
     </div>

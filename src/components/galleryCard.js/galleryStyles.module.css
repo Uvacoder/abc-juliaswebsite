@@ -1,0 +1,36 @@
+.card {
+  width: 33rem;
+  max-width: 33rem;
+  height: 300px;
+  background-repeat: no-repeat, repeat;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.card:hover {
+  filter: saturate(40%);
+}
+
+.text {
+  margin: 0 auto;
+  padding-top: 8rem;
+  width: 60%;
+  color: #f4f4f4;
+  font-size: 4.1rem;
+  font-weight: 10;
+  font-style: italic;
+}
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .text {
+    width: 100%;
+    padding-left: 2rem;
+    font-size: 3.1rem;
+  }
+}

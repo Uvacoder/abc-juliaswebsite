@@ -5,7 +5,6 @@ const result = dotenv.config()
 if (result.error) {
   throw result.error
 }
-
 console.log(result.parsed)
 
 module.exports = {
@@ -32,8 +31,6 @@ module.exports = {
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         resourceType: `image`,
         maxResults: 200,
-        // type: `private`,
-        // prefix: `medium`,
       },
     },
   ],

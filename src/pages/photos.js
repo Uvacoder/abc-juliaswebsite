@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Image from "gatsby-image"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
 
+import { parseUrlToThumb, parseUrlToFull } from "../utils/parseUrl"
 import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
 import Layout from "../components/layout"
@@ -64,14 +64,18 @@ const PhotosPage = () => {
           columnClassName="my-masonry-grid_column"
         >
           {photos.map((edge, i) => {
+            const thumb = parseUrlToThumb(edge.node.secure_url)
+            const full = parseUrlToFull(edge.node.secure_url)
             return (
               <div className="individualPhoto" key={i}>
-                <img
-                  src={edge.node.secure_url}
-                  className="image"
-                  alt={edge.node.title}
-                  style={{ cursor: "pointer" }}
-                />
+                <a href={full} data-attribute="SRL">
+                  <img
+                    src={thumb}
+                    className="image"
+                    alt={edge.node.title}
+                    style={{ cursor: "pointer" }}
+                  />
+                </a>
               </div>
             )
           })}

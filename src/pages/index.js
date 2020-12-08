@@ -18,7 +18,7 @@ const WelcomePage = () => {
 
       allFile(
         filter: {
-          extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+          extension: { regex: "/(jpg)|(png)|(jpeg)|(webp)/" }
           relativeDirectory: { eq: "splash" }
         }
       ) {

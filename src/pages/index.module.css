@@ -12,3 +12,11 @@ p {
 
   /* font-family: Georgia, "Times New Roman", Times, serif; */
 }
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+  .photo {
+    height: 60vh;
+  }
+}

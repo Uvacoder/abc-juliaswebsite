@@ -31,7 +31,7 @@ const PhotosPage = () => {
   `)
 
   const photos = data.allCloudinaryMedia.edges
-  // const shuffled = shuffleArray(photos)
+  const shuffled = shuffleArray(photos)
 
   return (
     <Layout>
@@ -63,18 +63,13 @@ const PhotosPage = () => {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {photos.map((edge, i) => {
+          {shuffled.map((edge, i) => {
             const thumb = parseUrlToThumb(edge.node.secure_url)
             const full = parseUrlToFull(edge.node.secure_url)
             return (
               <div className="individualPhoto" key={i}>
                 <a href={full} data-attribute="SRL">
-                  <img
-                    src={thumb}
-                    className="image"
-                    alt={edge.node.title}
-                    style={{ cursor: "pointer" }}
-                  />
+                  <img src={thumb} className="image" alt={edge.node.title} />
                 </a>
               </div>
             )

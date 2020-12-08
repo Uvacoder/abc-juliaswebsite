@@ -32,18 +32,18 @@ const AboutPage = () => {
           />
           <p className={aboutPageStyles.credit}>Photo credit: Jordan Nelson</p>
         </div>
+
         <p>
-          Julia is a self-taught film photographer from Detroit, currently
-          living in Chicago. She has been experimenting with the medium since
-          childhood after being gifted a Canon Sureshot 115u from her father.
-          Currently, she develops and processes out of her home lab. Her subject
-          matter includes international travel, backcountry landscapes, daily
-          city life, and candid portraiture.
+          Julia is a multidisciplinary maker currently exploring the world of
+          film photography. She is originally from Detroit and now lives in
+          Chicago. Most often, she can be found mixing chemistry and developing
+          film in her home lab. Her subject matter includes travel, backcountry
+          landscapes, daily city life, and candid portraiture.
         </p>
         <p>
           When she’s not working, she enjoys: wood working, cooking, bartending,
-          biking aimlessly around the city, long road trips in her
-          self-converted Jeep, rock climbing, and getting into nature.
+          biking around the city, long road trips in her Jeep, rock climbing,
+          and getting into nature.
         </p>
       </div>
     </Layout>

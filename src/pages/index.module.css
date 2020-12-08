@@ -1,6 +1,7 @@
 .container {
   height: 100%;
   max-width: 40rem;
+  max-height: 70vh;
 }
 .photo {
   width: 100%;

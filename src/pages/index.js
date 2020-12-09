@@ -41,7 +41,7 @@ const WelcomePage = () => {
   return (
     <Layout>
       <Head />
-      <h1>{data.site.siteMetadata.title}</h1>
+      <h1 className={indexStyles.title}>{data.site.siteMetadata.title}</h1>
 
       {photos
         .filter((photo, i) => i === randomIndex)

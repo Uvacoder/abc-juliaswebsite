@@ -5,30 +5,36 @@
   position: fixed;
   z-index: 1;
   overflow: auto;
+  text-align: right;
 }
 
 .sidebarMain h1 {
   font-family: "Montserrat", sans-serif;
 }
+.title {
+  font-size: 2rem;
+}
 
 nav a {
   display: block;
-  color: #333;
   padding: 16px;
   text-decoration: none;
-  font-size: 1.2rem;
+  color: #222;
 }
 
 nav a:hover {
-  background: rgb(0, 99, 156);
+  background: none;
+  color: #ff8f0f;
   text-decoration: none;
-  color: #f4f4f4;
+}
+.active {
+  color: #ff8f0f;
 }
 
 .hamburger {
   margin: 0;
   font-size: 30px;
-  color: #333;
+  color: #222;
   display: none;
   width: 30px;
   float: left;
@@ -37,28 +43,49 @@ nav a:hover {
 .toggle {
   display: none;
 }
+.logo {
+  /* border-radius: 50%; */
+  max-width: 5rem;
+}
 
 .icons {
   display: inline-flex;
+  justify-content: space-between;
 }
 @media screen and (max-width: 700px) {
   .hamburger {
     display: block;
     cursor: pointer;
   }
+  .title {
+    font-size: 3rem;
+  }
+
   .sidebarMain {
     text-align: center;
-    width: 100%;
+    width: 100vw;
     display: none;
     display: block;
-    background: #c4deff;
-    width: 50%;
+    margin: 0;
+    line-height: 0.8;
+    background: #f4f4f4;
+    width: 100%;
+    height: 100vh;
   }
-  .sidebarMain a {
-    display: block;
-    color: #333;
-  }
+
   a:hover {
-    color: #f4f4f4;
+    color: #ff8f0f;
+  }
+  nav a {
+    display: block;
+    color: #222;
+    margin-top: 0.5rem;
+    padding: 2.4rem 0;
+    font-size: 2.4rem;
+    text-decoration: none;
+  }
+  .icons a {
+    margin-left: 1rem;
+    padding-right: 1rem;
   }
 }

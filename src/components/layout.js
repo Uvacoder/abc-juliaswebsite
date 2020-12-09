@@ -1,5 +1,6 @@
 import React from "react"
 // import SimpleReactLightbox from "simple-react-lightbox"
+import Fade from "react-reveal/Fade"
 
 import Navbar from "./navbar"
 import Footer from "./footer"
@@ -15,7 +16,9 @@ const Layout = props => {
       <Navbar />
       <div className={layoutStyle.content}>
         <SimpleReactLightbox>
-          <main>{props.children}</main>
+          <Fade duration={1000}>
+            <main>{props.children}</main>
+          </Fade>
         </SimpleReactLightbox>
       </div>
       <Footer />

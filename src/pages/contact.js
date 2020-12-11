@@ -31,7 +31,7 @@ const ContactPage = () => {
       <h1>Contact</h1>
       <form
         onSubmit={submitForm}
-        action="https://formspree.io/f/xaylbnyo"
+        action="https://formspree.io/f/myybndya"
         method="POST"
         className={formStyle.form}
       >

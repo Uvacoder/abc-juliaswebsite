@@ -22,7 +22,7 @@ const SideNav = () => {
       </Link>
 
       <div className={navbarStyle.icons} id="social-medias">
-        <a href="https://www.instagram.com/freckledjuju/" target="blank">
+        <a href="https://www.instagram.com/analog.juju/" target="blank">
           <FaInstagram />
         </a>
 

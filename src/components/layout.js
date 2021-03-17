@@ -11,19 +11,19 @@ import layoutStyle from "./layout.module.css"
 
 const Layout = props => {
   return (
-    // <SimpleReactLightbox>
-    <div className={layoutStyle.body}>
-      <Navbar />
-      <div className={layoutStyle.content}>
-        <SimpleReactLightbox>
-          <Fade duration={1000}>
-            <main>{props.children}</main>
-          </Fade>
-        </SimpleReactLightbox>
+    <>
+      <div className={layoutStyle.body}>
+        <Navbar />
+        <div className={layoutStyle.content}>
+          <SimpleReactLightbox>
+            <Fade duration={1000}>
+              <main>{props.children}</main>
+            </Fade>
+          </SimpleReactLightbox>
+        </div>
       </div>
       <Footer />
-    </div>
-    // </SimpleReactLightbox>
+    </>
   )
 }
 

@@ -1,6 +1,6 @@
 .footer {
-  text-align: center;
-  margin-right: 5rem;
+  display: flex;
+  justify-content: center;
   max-height: 1rem;
   font-size: 0.6rem;
   margin-bottom: 5px;

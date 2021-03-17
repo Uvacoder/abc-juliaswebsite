@@ -21,6 +21,17 @@
 .form input {
   padding: 0.5rem;
 }
+input,
+textarea,
+.submit {
+  background: #f4f4f4;
+  border: 1px solid #888;
+  border-radius: 1rem;
+}
+input,
+textarea:focus {
+  outline: none;
+}
 
 .form label {
   margin: 1rem 0;
@@ -33,6 +44,12 @@
 }
 
 .submit {
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 0.5rem;
+  width: 25%;
+}
+
+.submit:hover {
+  color: #f4f4f4;
+  background: #222;
 }

@@ -14,6 +14,9 @@ const SideNav = () => {
       <Link to="/photos" activeClassName={navbarStyle.active}>
         Photos
       </Link>
+      <Link to="/woodwork" activeClassName={navbarStyle.active}>
+        Woodwork
+      </Link>
       <Link to="/about" activeClassName={navbarStyle.active}>
         About
       </Link>

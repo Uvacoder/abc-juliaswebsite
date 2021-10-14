@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
 
-import { parseUrlToThumb, parseUrlToFull, matchFolder } from "../utils/parseUrl"
+import { parseUrlToFull, matchFolder } from "../utils/parseUrl"
 import { shuffleArray } from "../utils/randomizer"
 import Head from "../components/head"
 import Layout from "../components/layout"
@@ -11,15 +11,15 @@ import Layout from "../components/layout"
 import "../styles/masonry.css"
 
 const breakpointColumnsObj = {
-  default: 4,
-  1505: 3,
+  default: 2,
+  1505: 2,
   948: 2,
   500: 2,
 }
 
-const PhotosPage = () => {
+const WoodworkPage = () => {
   const data = useStaticQuery(graphql`
-    query CloudinaryImage {
+    query cloudinaryImageAndCloudinaryImage {
       allCloudinaryMedia {
         edges {
           node {
@@ -31,13 +31,13 @@ const PhotosPage = () => {
     }
   `)
 
-  const photos = matchFolder(data.allCloudinaryMedia.edges, "boom")
+  const photos = matchFolder(data.allCloudinaryMedia.edges, "Woodwork")
   const shuffled = shuffleArray(photos)
 
   return (
     <Layout>
-      <Head title="Photos" />
-      <h1>Photography</h1>
+      <Head title="Woodwork" />
+      <h1>Woodwork</h1>
       <SRLWrapper
         options={{
           settings: {
@@ -65,16 +65,12 @@ const PhotosPage = () => {
           columnClassName="my-masonry-grid_column"
         >
           {shuffled.map((edge, i) => {
-            const thumb = parseUrlToThumb(edge.node.secure_url)
+            // const thumb = parseUrlToThumb(edge.node.secure_url)
             const full = parseUrlToFull(edge.node.secure_url)
             return (
               <div className="individualPhoto" key={i}>
                 <a href={full} data-attribute="SRL">
-                  <img
-                    src={thumb}
-                    className="image"
-                    alt={edge.node.public_id}
-                  />
+                  <img src={full} className="image" alt={edge.node.public_id} />
                 </a>
               </div>
             )
@@ -85,4 +81,4 @@ const PhotosPage = () => {
   )
 }
 
-export default PhotosPage
+export default WoodworkPage

@@ -24,11 +24,12 @@ nav a {
 
 nav a:hover {
   background: none;
-  color: #ff8f0f;
+  color: #ff9100;
   text-decoration: none;
 }
 .active {
-  color: #ff8f0f;
+  color: #ff9100;
+  font-variant-caps: petite-caps;
 }
 
 .hamburger {
@@ -74,13 +75,13 @@ nav a:hover {
   }
 
   a:hover {
-    color: #ff8f0f;
+    color: #ff9100;
   }
   nav a {
     display: block;
     color: #222;
     margin-top: 0.5rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-size: 2rem;
     text-decoration: none;
   }

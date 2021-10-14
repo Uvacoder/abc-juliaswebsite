@@ -47,6 +47,13 @@ const MobileNav = () => {
               Photos
             </Link>
             <Link
+              to="/woodwork"
+              activeClassName={navbarStyle.active}
+              onClick={() => setIsChecked(!isChecked)}
+            >
+              Woodwork
+            </Link>
+            <Link
               to="/about"
               activeClassName={navbarStyle.active}
               onClick={() => setIsChecked(!isChecked)}

@@ -4,24 +4,27 @@
   display: -ms-flexbox;
   /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -30px;
+  margin-left: 0px;
   /* gutter size offset */
-  width: auto;
-  /* margin: 0.1rem; */
-  padding-left: 0.3rem;
+  width: 100%;
+  margin: 0.1rem;
 }
 
 .my-masonry-grid_column {
   padding-left: 0.4rem;
-  margin-bottom: 2rem;
+
   /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
-.my-masonry-grid_column .image {
-  /* change div to reference your elements you put in <Masonry> */
+.my-masonry-grid_column > .image {
   margin-bottom: 0;
+}
+.image {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .image:hover {

@@ -1,5 +1,4 @@
 import React from "react"
-// import SimpleReactLightbox from "simple-react-lightbox"
 import Fade from "react-reveal/Fade"
 
 import Navbar from "./navbar"
@@ -8,6 +7,7 @@ import SimpleReactLightbox from "simple-react-lightbox"
 
 import "../styles/styles.css"
 import layoutStyle from "./layout.module.css"
+import "react-image-lightbox/style.css"
 
 const Layout = props => {
   return (

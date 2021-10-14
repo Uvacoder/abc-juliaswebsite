@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState, useCallback } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { SRLWrapper } from "simple-react-lightbox"
+import Lightbox from "react-image-lightbox"
 import Masonry from "react-masonry-css"
 
 import { parseUrlToThumb, parseUrlToFull } from "../utils/parseUrl"
@@ -18,12 +18,17 @@ const breakpointColumnsObj = {
 }
 
 const PhotosPage = () => {
+  const [openLightBox, setOpenLightBox] = useState(false)
+  const [photoIdx, setPhotoIdx] = useState(0)
+  const [currentPhoto, setCurrentPhoto] = useState(null)
+
   const data = useStaticQuery(graphql`
     query CloudinaryImage {
       allCloudinaryMedia {
         edges {
           node {
             secure_url
+            id
           }
         }
       }
@@ -33,51 +38,66 @@ const PhotosPage = () => {
   const photos = data.allCloudinaryMedia.edges
   const shuffled = shuffleArray(photos)
 
+  const setLightBox = (e, url) => {
+    e.preventDefault()
+
+    setCurrentPhoto(url)
+    setOpenLightBox(true)
+  }
+
   return (
     <Layout>
       <Head title="Photos" />
       <h1>Photography</h1>
-      <SRLWrapper
-        options={{
-          settings: {
-            overlayColor: "rgba(0, 0, 0, 0.9)",
-            height: "91vh",
-          },
-          buttons: {
-            showDownloadButton: false,
-            showThumbnailsButton: false,
-            showAutoplayButton: false,
-            size: "10px",
-            showCloseButton: true,
-          },
-          thumbnails: {
-            showThumbnails: false,
-          },
-          caption: {
-            showCaption: false,
-          },
-        }}
+
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
       >
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {shuffled.map((edge, i) => {
-            const thumb = parseUrlToThumb(edge.node.secure_url)
-            const full = parseUrlToFull(edge.node.secure_url)
-            return (
-              <div className="individualPhoto" key={i}>
-                <a href={full} data-attribute="SRL">
-                  <img src={thumb} className="image" alt={edge.node.title} />
-                </a>
-              </div>
-            )
-          })}
-        </Masonry>
-      </SRLWrapper>
+        {photos.map(edge => {
+          const thumb = parseUrlToThumb(edge.node.secure_url)
+          const full = parseUrlToFull(edge.node.secure_url)
+
+          return (
+            <div
+              key={edge.node.id}
+              className="image"
+              onClick={e => setLightBox(e, full)}
+            >
+              <img src={thumb} alt={thumb} />
+            </div>
+          )
+        })}
+      </Masonry>
+
+      {openLightBox && (
+        <Lightbox
+          mainSrc={currentPhoto}
+          onCloseRequest={() => setOpenLightBox(false)}
+        />
+      )}
     </Layout>
   )
 }
 
 export default PhotosPage
+
+// {shuffled.map(edge => {
+//   const thumb = parseUrlToThumb(edge.node.secure_url)
+//   const full = parseUrlToFull(edge.node.secure_url)
+//   edge = {
+//     ...edge,
+//     id: uuidv4(),
+//   }
+//   console.log(edge)
+//   return (
+//     <div
+//       className="individualPhoto"
+//       key={edge.id}
+//       onClick={setOpenLightBox(true)}
+//     >
+//       <h1>hello</h1>
+//     </div>
+//   )
+// })}

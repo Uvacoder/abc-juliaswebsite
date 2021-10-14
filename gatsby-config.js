@@ -4,8 +4,6 @@ module.exports = {
   siteMetadata: {
     title: "Julia Williams",
     author: "Dillon Kelley",
-    description:
-      "Julia Williams. Photographer. Artist. Raised in Detroit. Based in Chicago.",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

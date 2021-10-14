@@ -11,19 +11,19 @@ import "react-image-lightbox/style.css"
 
 const Layout = props => {
   return (
-    <>
-      <div className={layoutStyle.body}>
-        <Navbar />
-        <div className={layoutStyle.content}>
-          <SimpleReactLightbox>
-            <Fade duration={1000}>
-              <main>{props.children}</main>
-            </Fade>
-          </SimpleReactLightbox>
-        </div>
+    // <SimpleReactLightbox>
+    <div className={layoutStyle.body}>
+      <Navbar />
+      <div className={layoutStyle.content}>
+        <SimpleReactLightbox>
+          <Fade duration={1000}>
+            <main>{props.children}</main>
+          </Fade>
+        </SimpleReactLightbox>
       </div>
       <Footer />
-    </>
+    </div>
+    // </SimpleReactLightbox>
   )
 }
 

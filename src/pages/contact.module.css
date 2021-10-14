@@ -21,17 +21,6 @@
 .form input {
   padding: 0.5rem;
 }
-input,
-textarea,
-.submit {
-  background: #f4f4f4;
-  border: 1px solid #888;
-  border-radius: 1rem;
-}
-input,
-textarea:focus {
-  outline: none;
-}
 
 .form label {
   margin: 1rem 0;
@@ -44,9 +33,10 @@ textarea:focus {
 }
 
 .submit {
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 0.5rem;
   width: 25%;
+  cursor: pointer;
 }
 
 .submit:hover {

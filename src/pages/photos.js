@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { SRLWrapper } from "simple-react-lightbox"
 import Masonry from "react-masonry-css"
+import { SRLWrapper } from "simple-react-lightbox"
 
 import { parseUrlToThumb, parseUrlToFull, matchFolder } from "../utils/parseUrl"
 import { shuffleArray } from "../utils/randomizer"
@@ -37,7 +37,7 @@ const PhotosPage = () => {
   return (
     <Layout>
       <Head title="Photos" />
-      <h1>Photography</h1>
+      <h1>Photos</h1>
       <SRLWrapper
         options={{
           settings: {
@@ -70,11 +70,7 @@ const PhotosPage = () => {
             return (
               <div className="individualPhoto" key={i}>
                 <a href={full} data-attribute="SRL">
-                  <img
-                    src={thumb}
-                    className="image"
-                    alt={edge.node.public_id}
-                  />
+                  <img src={full} className="image" alt={edge.node.public_id} />
                 </a>
               </div>
             )

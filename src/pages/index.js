@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
+import { v4 as uuid } from "uuid"
 
 import Head from "../components/head"
 import Layout from "../components/layout"
@@ -47,7 +48,7 @@ const WelcomePage = () => {
         .filter((photo, i) => i === randomIndex)
         .map(photo => {
           return (
-            <div className={indexStyles.container}>
+            <div className={indexStyles.container} key={uuid()}>
               <Image
                 className={indexStyles.photo}
                 fluid={photo.node.childImageSharp.fluid}
